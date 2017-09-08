@@ -1,0 +1,8 @@
+#idea directory
+.idea
+
+#dist directory
+dist
+
+#node modules
+node_modules
