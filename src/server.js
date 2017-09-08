@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-app.listen('8080', () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('server started using port 8080');
 });
 
