@@ -9,11 +9,11 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-app.listen('8080', () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log('server started using port 8080');
 });
 
-app.use('/trainPlanner/evaluate', (req, res) => {
+app.use('/trainPlanner', (req, res) => {
   console.log(req.body);
   const trainPlanner = new TrainPlanner(req.body);
   const output = trainPlanner.getBusiestRoute(req.body.destination);
