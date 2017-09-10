@@ -14,18 +14,18 @@ export default class RouteMap {
 
   };
 
-  getTotalPassengers(currentStation, nextStation, destination) {
+  getTotalPassengers(station, lastVisitedStn, destination) {
     let totalPassenger = 0;
-    currentStation.connectedStations.forEach((station) => {
-      if (!station.equals(nextStation) && !station.equals(destination)) {
-        const nextStnInShortestRoute = this.getNextStationOfShortestRoute(station, destination);
-        if(nextStnInShortestRoute.equals(currentStation)) {
-          totalPassenger += this.getTotalPassengers(station, currentStation, destination);
+    station.connectedStations.forEach((stn) => {
+      if (!stn.equals(lastVisitedStn) && !stn.equals(destination)) {
+        const nextStnInShortestRoute = this.getNextStationOfShortestRoute(stn, destination);
+        if(nextStnInShortestRoute.equals(station)) {
+          totalPassenger += this.getTotalPassengers(stn, station, destination);
         }
       }
     });
 
-    totalPassenger += currentStation.getNumOfPassengers();
+    totalPassenger += station.getNumOfPassengers();
     return totalPassenger;
   }
 
@@ -76,13 +76,5 @@ export default class RouteMap {
       }
     });
     return listOfStn;
-  }
-
-  print() {
-    this.stations.forEach((stn) => {
-      stn.connectedStations.forEach((station) => {
-        console.log(`${stn.getName()}-->${station.getName()}`);
-      });
-    });
   }
 }

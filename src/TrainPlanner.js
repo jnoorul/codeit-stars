@@ -10,9 +10,7 @@ export default class TrainPlanner {
 
   getBusiestRoute(dest) {
     const routeMap = this.getRouteMap();
-
     const destStn = routeMap.findStationByName(dest);
-
     let maxPassengers = 0;
     let busiestStation = destStn.connectedStations[0];
 
