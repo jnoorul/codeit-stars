@@ -1,23 +1,20 @@
 export default class Station {
-  constructor(name, numOfPassengers, lines) {
+  constructor(name, numOfPassengers) {
     this.getName = () => {
       return name;
     };
     this.getNumOfPassengers = () => {
       return numOfPassengers;
     };
-    this.getLines = () => {
-      return lines;
-    };
-    this._connectedStations = [];
+    this._connections = [];
   }
 
-  set connectedStations(list) {
-    this._connectedStations = list;
+  set connections(list) {
+    this._connections = list;
   }
 
-  get connectedStations() {
-    return this._connectedStations;
+  get connections() {
+    return this._connections;
   }
 
   equals(station) {

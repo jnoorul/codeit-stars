@@ -4,91 +4,181 @@ it('should return busiest station-testcase 1', () => {
     "name": "SimpleRouteMap",
     "groupId": 1,
     "input": {
-
       "destination": "DhobyGhaut",
-
       "stations": [{
         "name": "Punggol",
         "passengers": 80,
-        "connectedStations": ["Sengkang"],
-        "lines": ["purple"]
+        "connections": [{
+          "station": "Sengkang",
+          "line": "purple"
+        }
+        ]
+
       }, {
 
         "name": "Sengkang",
         "passengers": 40,
-        "connectedStations": ["Punggol","Serangoon"],
-        "lines": ["purple"]
+        "connections": [{
+          "station": "Punggol",
+          "line": "purple"
+        }, {
+          "station": "Serangoon",
+          "line": "purple"
+        }
+        ]
+
       }, {
 
         "name": "Serangoon",
         "passengers": 40,
-        "connectedStations": ["Sengkang", "LittleIndia", "PayaLebar", "Bishan"],
-        "lines": ["purple", "circle"]
-      },{
+        "connections": [{
+          "station": "LittleIndia",
+          "line": "purple"
+        }, {
+          "station": "Sengkang",
+          "line": "purple"
+        }, {
+          "station": "PayaLebar",
+          "line": "orange"
+        },{
+          "station": "Bishan",
+          "line": "orange"
+        }
+        ]
+      }, {
 
         "name": "LittleIndia",
         "passengers": 40,
-        "connectedStations": ["Serangoon","DhobyGhaut"],
-        "lines": ["purple"]
-      },{
+        "connections": [{
+          "station": "Serangoon",
+          "line": "purple"
+        }, {
+          "station": "DhobyGhaut",
+          "line": "purple"
+        },
+        ]
+      }, {
 
         "name": "DhobyGhaut",
         "passengers": 20,
-        "connectedStations": ["LittleIndia", "HarbourFront", "MarinaBay", "Orchard", "Esplanade"],
-        "lines": ["purple", "red", "circle"]
+        "connections": [{
+          "station": "LittleIndia",
+          "line": "purple"
+        }, {
+          "station": "HarbourFront",
+          "line": "purple"
+        }, {
+          "station": "Somerset",
+          "line": "red"
+        }, {
+          "station": "MarinaBay",
+          "line": "red"
+        }, {
+          "station": "Esplanade",
+          "line": "orange"
+        }
+        ]
 
-      },{
+      }, {
 
         "name": "HarbourFront",
         "passengers": 90,
-        "connectedStations": ["DhobyGhaut"],
-        "lines": ["purple"]
+        "connections": [{
+          "station": "DhobyGhaut",
+          "line": "purple"
+        }
+        ]
 
-      },{
-        "name": "Orchard",
-        "passengers": 30,
-        "connectedStations": ["DhobyGhaut", "Somerset"],
-        "lines": ["red"]
-
-      },{
+      }, {
         "name": "Somerset",
         "passengers": 0,
-        "connectedStations": ["Orchard", "Novena"],
-        "lines": ["red"]
+        "connections": [{
+          "station": "DhobyGhaut",
+          "line": "red"
+        }, {
+          "station": "Orchard",
+          "line": "red"
+        }
+        ]
 
-      },{
+      }, {
+        "name": "Orchard",
+        "passengers": 30,
+        "connections": [{
+          "station": "Somerset",
+          "line": "red"
+        }, {
+          "station": "Novena",
+          "line": "red"
+        }
+        ]
+
+      }, {
         "name": "Novena",
         "passengers": 10,
-        "connectedStations": ["Somerset", "Bishan"],
-        "lines": ["red"]
+        "connections": [{
+          "station": "Orchard",
+          "line": "red"
+        }, {
+          "station": "Bishan",
+          "line": "red"
+        }
+        ]
 
-      },{
+      }, {
         "name": "Bishan",
         "passengers": 20,
-        "connectedStations": ["Woodlands", "Novena", "Serangoon"],
-        "lines": ["red","circle"]
+        "connections": [{
+          "station": "Novena",
+          "line": "red"
+        }, {
+          "station": "Woodlands",
+          "line": "red"
+        }, {
+          "station": "Serangoon",
+          "line": "orange"
+        }
+        ]
 
-      },{
+      }, {
         "name": "Woodlands",
         "passengers": 40,
-        "connectedStations": ["Bishan"],
-        "lines": ["red"]
+        "connections": [{
+          "station": "Bishan",
+          "line": "red"
+        }
+        ]
 
-      },{
+      }, {
         "name": "MarinaBay",
         "passengers": 100,
-        "connectedStations": ["DhobyGhaut"],
-        "lines": ["red"]
-      },{
+        "connections": [{
+          "station": "DhobyGhaut",
+          "line": "red"
+        }
+        ]
+      }, {
         "name": "Esplanade",
         "passengers": 0,
-        "connectedStations": ["DhobyGhaut","PayaLebar"],
-        "lines": ["circle"]
-      },{
+        "connections": [{
+          "station": "DhobyGhaut",
+          "line": "orange"
+        }, {
+          "station": "PayaLebar",
+          "line": "orange"
+        }
+        ]
+      }, {
         "name": "PayaLebar",
         "passengers": 75,
-        "connectedStations": ["Esplanade","Serangoon"],
-        "lines": ["circle"]
+        "connections": [{
+          "station": "Esplanade",
+          "line": "orange"
+        }, {
+          "station": "Serangoon",
+          "line": "orange"
+        }
+        ]
       }
       ]
     },
@@ -105,7 +195,7 @@ it('should return busiest station-testcase 1', () => {
   expect(output).toEqual(testData.output);
 });
 
-it('should return busiest station - testcase 2', () => {
+/*it('should return busiest station - testcase 2', () => {
   const testData = {
     "name": "SimpleRouteMap",
     "groupId": 3,
@@ -1223,7 +1313,7 @@ it('should return busiest station - test case 8', () => {
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
   console.log(output);
   expect(output).toEqual(testData.output);
-});
+});*/
 
 
 

@@ -4,23 +4,26 @@ export default class RouteMap {
   constructor(input) {
     this.stations = [];
     input.stations.forEach((stn) => {
-      this.stations.push(new Station(stn.name, stn.passengers, stn.lines));
+      this.stations.push(new Station(stn.name, stn.passengers));
     });
 
-    input.stations.forEach((stn) => {
-      const station = this.findStationByName(stn.name);
-      station.connectedStations = this.findListOfStations(stn.connectedStations);
+    input.stations.forEach((inputStn) => {
+      const station = this.findStationByName(inputStn.name);
+      inputStn.connections.forEach((inputConnection) => {
+        const connStn = this.findStationByName(inputConnection.station);
+        const conn = {station: connStn, line: inputConnection.line};
+        station.connections.push(conn);
+      });
     });
-
   };
 
   getTotalPassengers(station, lastVisitedStn, destination) {
     let totalPassenger = 0;
-    station.connectedStations.forEach((stn) => {
-      if (!stn.equals(lastVisitedStn) && !stn.equals(destination)) {
-        const nextStnInShortestRoute = this.getNextStationOfShortestRoute(stn, destination);
+    station.connections.forEach((conn) => {
+      if (!conn.station.equals(lastVisitedStn) && !conn.station.equals(destination)) {
+        const nextStnInShortestRoute = this.getNextStationOfShortestRoute(conn.station, destination);
         if(nextStnInShortestRoute.equals(station)) {
-          totalPassenger += this.getTotalPassengers(stn, station, destination);
+          totalPassenger += this.getTotalPassengers(conn.station, station, destination);
         }
       }
     });
@@ -30,25 +33,25 @@ export default class RouteMap {
   }
 
   findListOfRoutes(src, dest, route, listOfRoutes) {
-    src.connectedStations.forEach((stn) => {
+    src.connections.forEach((conn) => {
       const newRoute = route.slice();
-      if (route.length > 0 && stn.equals(newRoute[newRoute.length - 1])) {
+      if (route.length > 0 && conn.station.equals(newRoute[newRoute.length - 1])) {
         return;
       }
       newRoute.push(src);
-      if (stn.equals(dest)) {
+      if (conn.station.equals(dest)) {
         newRoute.push(dest);
         listOfRoutes.push(newRoute);
       } else {
-        this.findListOfRoutes(stn, dest, newRoute, listOfRoutes);
+        this.findListOfRoutes(conn.station, dest, newRoute, listOfRoutes);
       }
     });
     return listOfRoutes;
   }
 
   getNextStationOfShortestRoute(src, dest) {
-    if (src.connectedStations.length === 1) {
-      return src.connectedStations[0];
+    if (src.connections.length === 1) {
+      return src.connections[0].station;
     }
     const listOfRoutes = this.findListOfRoutes(src, dest, [], []);
     let minSize = listOfRoutes[0].length;

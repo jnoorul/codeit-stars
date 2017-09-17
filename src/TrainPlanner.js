@@ -12,20 +12,20 @@ export default class TrainPlanner {
     const routeMap = this.getRouteMap();
     const destStn = routeMap.findStationByName(dest);
     let maxPassengers = 0;
-    let busiestStation = destStn.connectedStations[0];
+    let busiestConnection = destStn.connections[0];
 
-    destStn.connectedStations.forEach((station) => {
-      const totalPassengers = routeMap.getTotalPassengers(station, destStn, destStn);
+    destStn.connections.forEach((conn) => {
+      const totalPassengers = routeMap.getTotalPassengers(conn.station, destStn, destStn);
       if(totalPassengers > maxPassengers) {
-        busiestStation = station;
+        busiestConnection = conn;
         maxPassengers = totalPassengers;
       }
     });
 
     return {
-      line: busiestStation.getLines()[0],
+      line: busiestConnection.line,
       totalNumOfPassengers: maxPassengers,
-      reachingVia: busiestStation.getName()
+      reachingVia: busiestConnection.station.getName()
     };
   }
 }
