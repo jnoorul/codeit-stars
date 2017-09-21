@@ -1,185 +1,215 @@
 import TrainPlanner from '../TrainPlanner';
 it('should return busiest station-testcase 1', () => {
   const testData = {
-    "name": "SimpleRouteMap",
+    "name": "RouteMap-1",
     "groupId": 1,
     "input": {
       "destination": "DhobyGhaut",
-      "stations": [{
-        "name": "Punggol",
-        "passengers": 80,
-        "connections": [{
-          "station": "Sengkang",
-          "line": "purple"
-        }
-        ]
-
-      }, {
-
-        "name": "Sengkang",
-        "passengers": 40,
-        "connections": [{
-          "station": "Punggol",
-          "line": "purple"
-        }, {
-          "station": "Serangoon",
-          "line": "purple"
-        }
-        ]
-
-      }, {
-
-        "name": "Serangoon",
-        "passengers": 40,
-        "connections": [{
-          "station": "LittleIndia",
-          "line": "purple"
-        }, {
-          "station": "Sengkang",
-          "line": "purple"
-        }, {
-          "station": "PayaLebar",
-          "line": "orange"
-        },{
-          "station": "Bishan",
-          "line": "orange"
-        }
-        ]
-      }, {
-
-        "name": "LittleIndia",
-        "passengers": 40,
-        "connections": [{
-          "station": "Serangoon",
-          "line": "purple"
-        }, {
-          "station": "DhobyGhaut",
-          "line": "purple"
+      "stations": [
+        {
+          "name": "Punggol",
+          "passengers": 80,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
+          ]
         },
-        ]
-      }, {
-
-        "name": "DhobyGhaut",
-        "passengers": 20,
-        "connections": [{
-          "station": "LittleIndia",
-          "line": "purple"
-        }, {
-          "station": "HarbourFront",
-          "line": "purple"
-        }, {
-          "station": "Somerset",
-          "line": "red"
-        }, {
-          "station": "MarinaBay",
-          "line": "red"
-        }, {
-          "station": "Esplanade",
-          "line": "orange"
+        {
+          "name": "Sengkang",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Serangoon",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "LittleIndia",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "DhobyGhaut",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "HarbourFront",
+          "passengers": 90,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Orchard",
+          "passengers": 30,
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Novena",
+          "passengers": 10,
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Bishan",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Woodlands",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "MarinaBay",
+          "passengers": 100,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "PayaLebar",
+          "passengers": 75,
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
         }
-        ]
-
-      }, {
-
-        "name": "HarbourFront",
-        "passengers": 90,
-        "connections": [{
-          "station": "DhobyGhaut",
-          "line": "purple"
-        }
-        ]
-
-      }, {
-        "name": "Somerset",
-        "passengers": 0,
-        "connections": [{
-          "station": "DhobyGhaut",
-          "line": "red"
-        }, {
-          "station": "Orchard",
-          "line": "red"
-        }
-        ]
-
-      }, {
-        "name": "Orchard",
-        "passengers": 30,
-        "connections": [{
-          "station": "Somerset",
-          "line": "red"
-        }, {
-          "station": "Novena",
-          "line": "red"
-        }
-        ]
-
-      }, {
-        "name": "Novena",
-        "passengers": 10,
-        "connections": [{
-          "station": "Orchard",
-          "line": "red"
-        }, {
-          "station": "Bishan",
-          "line": "red"
-        }
-        ]
-
-      }, {
-        "name": "Bishan",
-        "passengers": 20,
-        "connections": [{
-          "station": "Novena",
-          "line": "red"
-        }, {
-          "station": "Woodlands",
-          "line": "red"
-        }, {
-          "station": "Serangoon",
-          "line": "orange"
-        }
-        ]
-
-      }, {
-        "name": "Woodlands",
-        "passengers": 40,
-        "connections": [{
-          "station": "Bishan",
-          "line": "red"
-        }
-        ]
-
-      }, {
-        "name": "MarinaBay",
-        "passengers": 100,
-        "connections": [{
-          "station": "DhobyGhaut",
-          "line": "red"
-        }
-        ]
-      }, {
-        "name": "Esplanade",
-        "passengers": 0,
-        "connections": [{
-          "station": "DhobyGhaut",
-          "line": "orange"
-        }, {
-          "station": "PayaLebar",
-          "line": "orange"
-        }
-        ]
-      }, {
-        "name": "PayaLebar",
-        "passengers": 75,
-        "connections": [{
-          "station": "Esplanade",
-          "line": "orange"
-        }, {
-          "station": "Serangoon",
-          "line": "orange"
-        }
-        ]
-      }
       ]
     },
     "output": {
@@ -187,7 +217,7 @@ it('should return busiest station-testcase 1', () => {
       "totalNumOfPassengers": 260,
       "reachingVia": "LittleIndia"
     },
-    "score": 20
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
@@ -195,159 +225,225 @@ it('should return busiest station-testcase 1', () => {
   expect(output).toEqual(testData.output);
 });
 
-/*it('should return busiest station - testcase 2', () => {
+it('should return busiest station - testcase 2', () => {
   const testData = {
-    "name": "SimpleRouteMap",
-    "groupId": 3,
+    "name": "RouteMap-2",
+    "groupId": 2,
     "input": {
       "destination": "DhobyGhaut",
       "stations": [
         {
+          "name": "Novena",
+          "passengers": 10,
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
           "name": "Punggol",
-          "passengers": 40,
-          "connectedStations": [
-            "Sengkang"
-          ],
-          "lines": [
-            "purple"
+          "passengers": 80,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Sengkang",
           "passengers": 40,
-          "connectedStations": [
-            "Punggol",
-            "Serangoon"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Serangoon",
           "passengers": 40,
-          "connectedStations": [
-            "Sengkang",
-            "LittleIndia",
-            "PayaLebar",
-            "Bishan"
-          ],
-          "lines": [
-            "purple",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "LittleIndia",
           "passengers": 40,
-          "connectedStations": [
-            "Serangoon",
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "DhobyGhaut",
           "passengers": 20,
-          "connectedStations": [
-            "LittleIndia",
-            "HarbourFront",
-            "MarinaBay",
-            "Orchard",
-            "PayaLebar"
-          ],
-          "lines": [
-            "purple",
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "HarbourFront",
           "passengers": 90,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Orchard",
           "passengers": 30,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Novena"
-          ],
-          "lines": [
-            "red"
-          ]
-        },
-        {
-          "name": "Novena",
-          "passengers": 10,
-          "connectedStations": [
-            "Orchard",
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Bishan",
           "passengers": 20,
-          "connectedStations": [
-            "Woodlands",
-            "Novena",
-            "Serangoon"
-          ],
-          "lines": [
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "Woodlands",
           "passengers": 40,
-          "connectedStations": [
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "MarinaBay",
           "passengers": 100,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 200,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "PayaLebar",
           "passengers": 75,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Serangoon"
-          ],
-          "lines": [
-            "circle"
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         }
       ]
     },
     "output": {
-      "line": "purple",
-      "totalNumOfPassengers": 220,
-      "reachingVia": "LittleIndia"
+      "line": "orange",
+      "totalNumOfPassengers": 275,
+      "reachingVia": "Esplanade"
     },
-    "score": 20
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
@@ -357,157 +453,223 @@ it('should return busiest station-testcase 1', () => {
 
 it('should return busiest station - testcase 3', () => {
   const testData = {
-    "name": "SimpleRouteMap",
+    "name": "RouteMap-3",
     "groupId": 3,
     "input": {
       "destination": "DhobyGhaut",
       "stations": [
         {
-          "name": "Punggol",
-          "passengers": 40,
-          "connectedStations": [
-            "Sengkang"
-          ],
-          "lines": [
-            "purple"
-          ]
-        },
-        {
           "name": "Sengkang",
           "passengers": 40,
-          "connectedStations": [
-            "Punggol",
-            "Serangoon"
-          ],
-          "lines": [
-            "purple"
-          ]
-        },
-        {
-          "name": "Serangoon",
-          "passengers": 40,
-          "connectedStations": [
-            "Sengkang",
-            "LittleIndia",
-            "PayaLebar",
-            "Bishan"
-          ],
-          "lines": [
-            "purple",
-            "circle"
-          ]
-        },
-        {
-          "name": "LittleIndia",
-          "passengers": 40,
-          "connectedStations": [
-            "Serangoon",
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
-          ]
-        },
-        {
-          "name": "DhobyGhaut",
-          "passengers": 20,
-          "connectedStations": [
-            "LittleIndia",
-            "HarbourFront",
-            "MarinaBay",
-            "Orchard",
-            "PayaLebar"
-          ],
-          "lines": [
-            "purple",
-            "red",
-            "circle"
-          ]
-        },
-        {
-          "name": "HarbourFront",
-          "passengers": 90,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
-          ]
-        },
-        {
-          "name": "Orchard",
-          "passengers": 30,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Novena"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Novena",
           "passengers": 10,
-          "connectedStations": [
-            "Orchard",
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Punggol",
+          "passengers": 80,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Serangoon",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "LittleIndia",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "DhobyGhaut",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "HarbourFront",
+          "passengers": 90,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 400,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Orchard",
+          "passengers": 30,
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Bishan",
           "passengers": 20,
-          "connectedStations": [
-            "Woodlands",
-            "Novena",
-            "Serangoon"
-          ],
-          "lines": [
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "Woodlands",
           "passengers": 40,
-          "connectedStations": [
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "MarinaBay",
           "passengers": 100,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 200,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "PayaLebar",
           "passengers": 75,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Serangoon"
-          ],
-          "lines": [
-            "circle"
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         }
       ]
     },
     "output": {
-      "line": "purple",
-      "totalNumOfPassengers": 220,
-      "reachingVia": "LittleIndia"
+      "line": "red",
+      "totalNumOfPassengers": 440,
+      "reachingVia": "Somerset"
     },
-    "score": 20
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
@@ -515,319 +677,451 @@ it('should return busiest station - testcase 3', () => {
   expect(output).toEqual(testData.output);
 });
 
-it('should return busiest station - testcase 4', () => {
+/*it('should return busiest station - testcase 4', () => {
   const testData = {
-    "name": "SimpleRouteMap",
+    "name": "RouteMap-4",
     "groupId": 4,
     "input": {
-      "destination": "DhobyGhaut",
+      "destination": "HarbourFront",
       "stations": [
         {
           "name": "Punggol",
           "passengers": 80,
-          "connectedStations": [
-            "Sengkang"
-          ],
-          "lines": [
-            "purple"
-          ]
-        },
-        {
-          "name": "Sengkang",
-          "passengers": 40,
-          "connectedStations": [
-            "Punggol",
-            "Serangoon"
-          ],
-          "lines": [
-            "purple"
-          ]
-        },
-        {
-          "name": "Serangoon",
-          "passengers": 40,
-          "connectedStations": [
-            "Sengkang",
-            "LittleIndia",
-            "PayaLebar",
-            "Bishan"
-          ],
-          "lines": [
-            "purple",
-            "circle"
-          ]
-        },
-        {
-          "name": "LittleIndia",
-          "passengers": 10,
-          "connectedStations": [
-            "Serangoon",
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
-          ]
-        },
-        {
-          "name": "DhobyGhaut",
-          "passengers": 20,
-          "connectedStations": [
-            "LittleIndia",
-            "HarbourFront",
-            "MarinaBay",
-            "Orchard",
-            "PayaLebar"
-          ],
-          "lines": [
-            "purple",
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "HarbourFront",
           "passengers": 90,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Sengkang",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Serangoon",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "LittleIndia",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "DhobyGhaut",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Orchard",
           "passengers": 30,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Novena"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Novena",
           "passengers": 10,
-          "connectedStations": [
-            "Orchard",
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Bishan",
           "passengers": 20,
-          "connectedStations": [
-            "Woodlands",
-            "Novena",
-            "Serangoon"
-          ],
-          "lines": [
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "Woodlands",
           "passengers": 40,
-          "connectedStations": [
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "MarinaBay",
           "passengers": 100,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "PayaLebar",
           "passengers": 75,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Serangoon"
-          ],
-          "lines": [
-            "circle"
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         }
       ]
     },
     "output": {
       "line": "purple",
-      "totalNumOfPassengers": 230,
-      "reachingVia": "LittleIndia"
+      "totalNumOfPassengers": 495,
+      "reachingVia": "DhobyGhaut"
     },
-    "score": 20
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
   console.log(output);
   expect(output).toEqual(testData.output);
-});
+});*/
 
 it('should return busiest station - testcase 5', () => {
   const testData = {
-    "name": "SimpleRouteMap",
+    "name": "RouteMap-5",
     "groupId": 5,
     "input": {
-      "destination": "DhobyGhaut",
+      "destination": "LittleIndia",
       "stations": [
         {
           "name": "Punggol",
           "passengers": 80,
-          "connectedStations": [
-            "Sengkang"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Sengkang",
           "passengers": 40,
-          "connectedStations": [
-            "Punggol",
-            "Serangoon"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Serangoon",
           "passengers": 40,
-          "connectedStations": [
-            "Sengkang",
-            "LittleIndia",
-            "PayaLebar",
-            "Bishan"
-          ],
-          "lines": [
-            "purple",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "LittleIndia",
           "passengers": 40,
-          "connectedStations": [
-            "Serangoon",
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "DhobyGhaut",
           "passengers": 20,
-          "connectedStations": [
-            "LittleIndia",
-            "HarbourFront",
-            "MarinaBay",
-            "Orchard",
-            "PayaLebar"
-          ],
-          "lines": [
-            "purple",
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "HarbourFront",
           "passengers": 90,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 25,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Orchard",
           "passengers": 30,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Novena"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Novena",
           "passengers": 10,
-          "connectedStations": [
-            "Orchard",
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Bishan",
           "passengers": 20,
-          "connectedStations": [
-            "Woodlands",
-            "Novena",
-            "Serangoon"
-          ],
-          "lines": [
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "Woodlands",
           "passengers": 40,
-          "connectedStations": [
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "MarinaBay",
           "passengers": 100,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "PayaLebar",
-          "passengers": 275,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Serangoon"
-          ],
-          "lines": [
-            "circle"
+          "passengers": 75,
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         }
       ]
     },
     "output": {
-      "line": "circle",
-      "totalNumOfPassengers": 275,
-      "reachingVia": "PayaLebar"
+      "line": "purple",
+      "totalNumOfPassengers": 305,
+      "reachingVia": "Serangoon"
     },
-    "score": 20
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
@@ -837,7 +1131,7 @@ it('should return busiest station - testcase 5', () => {
 
 it('should return busiest station - testcase 6', () => {
   const testData = {
-    "name": "SimpleRouteMap",
+    "name": "RouteMap-6",
     "groupId": 6,
     "input": {
       "destination": "DhobyGhaut",
@@ -845,149 +1139,243 @@ it('should return busiest station - testcase 6', () => {
         {
           "name": "Punggol",
           "passengers": 80,
-          "connectedStations": [
-            "Sengkang"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Sengkang",
           "passengers": 40,
-          "connectedStations": [
-            "Punggol",
-            "Serangoon"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Serangoon",
           "passengers": 40,
-          "connectedStations": [
-            "Sengkang",
-            "LittleIndia",
-            "PayaLebar",
-            "Bishan"
-          ],
-          "lines": [
-            "purple",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "LittleIndia",
           "passengers": 40,
-          "connectedStations": [
-            "Serangoon",
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "DhobyGhaut",
           "passengers": 20,
-          "connectedStations": [
-            "LittleIndia",
-            "HarbourFront",
-            "MarinaBay",
-            "Orchard",
-            "PayaLebar"
-          ],
-          "lines": [
-            "purple",
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Expo",
+              "line": "blue"
+            }
           ]
         },
         {
           "name": "HarbourFront",
-          "passengers": 290,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "passengers": 90,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 25,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Orchard",
           "passengers": 30,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Novena"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Novena",
           "passengers": 10,
-          "connectedStations": [
-            "Orchard",
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Bishan",
           "passengers": 20,
-          "connectedStations": [
-            "Woodlands",
-            "Novena",
-            "Serangoon"
-          ],
-          "lines": [
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "Woodlands",
           "passengers": 40,
-          "connectedStations": [
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "MarinaBay",
           "passengers": 100,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Expo",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "blue"
+            },
+            {
+              "station": "Changi",
+              "line": "green"
+            }
+          ]
+        },
+        {
+          "name": "Changi",
+          "passengers": 300,
+          "connections": [
+            {
+              "station": "Expo",
+              "line": "green"
+            }
           ]
         },
         {
           "name": "PayaLebar",
           "passengers": 75,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Serangoon"
-          ],
-          "lines": [
-            "circle"
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         }
       ]
     },
     "output": {
-      "line": "purple",
-      "totalNumOfPassengers": 290,
-      "reachingVia": "HarbourFront"
+      "line": "blue",
+      "totalNumOfPassengers": 320,
+      "reachingVia": "Expo"
     },
-    "score": 20
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
@@ -997,157 +1385,223 @@ it('should return busiest station - testcase 6', () => {
 
 it('should return busiest station - testcase 7', () => {
   const testData = {
-    "name": "SimpleRouteMap",
-    "groupId": 7,
+    "name": "RouteMap-7",
+    "groupId": 1,
     "input": {
-      "destination": "DhobyGhaut",
+      "destination": "Serangoon",
       "stations": [
         {
           "name": "Punggol",
           "passengers": 80,
-          "connectedStations": [
-            "Sengkang"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Sengkang",
-          "passengers": 0,
-          "connectedStations": [
-            "Punggol",
-            "Serangoon"
-          ],
-          "lines": [
-            "purple"
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Serangoon",
           "passengers": 40,
-          "connectedStations": [
-            "Sengkang",
-            "LittleIndia",
-            "PayaLebar",
-            "Bishan"
-          ],
-          "lines": [
-            "purple",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "LittleIndia",
           "passengers": 40,
-          "connectedStations": [
-            "Serangoon",
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "DhobyGhaut",
           "passengers": 20,
-          "connectedStations": [
-            "LittleIndia",
-            "HarbourFront",
-            "MarinaBay",
-            "Orchard",
-            "PayaLebar"
-          ],
-          "lines": [
-            "purple",
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "HarbourFront",
           "passengers": 90,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Orchard",
           "passengers": 30,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Novena"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Novena",
           "passengers": 10,
-          "connectedStations": [
-            "Orchard",
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Bishan",
           "passengers": 20,
-          "connectedStations": [
-            "Woodlands",
-            "Novena",
-            "Serangoon"
-          ],
-          "lines": [
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "Woodlands",
           "passengers": 40,
-          "connectedStations": [
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "MarinaBay",
           "passengers": 100,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "PayaLebar",
           "passengers": 75,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Serangoon"
-          ],
-          "lines": [
-            "circle"
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         }
       ]
     },
     "output": {
       "line": "purple",
-      "totalNumOfPassengers": 220,
+      "totalNumOfPassengers": 250,
       "reachingVia": "LittleIndia"
     },
-    "score": 20
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
@@ -1157,163 +1611,1189 @@ it('should return busiest station - testcase 7', () => {
 
 it('should return busiest station - test case 8', () => {
   const testData = {
-    "name": "SimpleRouteMap",
-    "groupId": 8,
+    "name": "RouteMap-8",
+    "groupId": 2,
     "input": {
       "destination": "DhobyGhaut",
       "stations": [
         {
           "name": "Punggol",
-          "passengers": 10,
-          "connectedStations": [
-            "Sengkang"
-          ],
-          "lines": [
-            "purple"
+          "passengers": 80,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Sengkang",
           "passengers": 40,
-          "connectedStations": [
-            "Punggol",
-            "Serangoon"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "Serangoon",
           "passengers": 40,
-          "connectedStations": [
-            "Sengkang",
-            "LittleIndia",
-            "PayaLebar",
-            "Bishan"
-          ],
-          "lines": [
-            "purple",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "LittleIndia",
           "passengers": 40,
-          "connectedStations": [
-            "Serangoon",
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
           ]
         },
         {
           "name": "DhobyGhaut",
           "passengers": 20,
-          "connectedStations": [
-            "LittleIndia",
-            "HarbourFront",
-            "MarinaBay",
-            "Orchard",
-            "PayaLebar"
-          ],
-          "lines": [
-            "purple",
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "HarbourFront",
           "passengers": 90,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "purple"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 330,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Orchard",
           "passengers": 30,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Novena"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Novena",
           "passengers": 10,
-          "connectedStations": [
-            "Orchard",
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "Bishan",
           "passengers": 20,
-          "connectedStations": [
-            "Woodlands",
-            "Novena",
-            "Serangoon"
-          ],
-          "lines": [
-            "red",
-            "circle"
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "Woodlands",
           "passengers": 40,
-          "connectedStations": [
-            "Bishan"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
           ]
         },
         {
           "name": "MarinaBay",
           "passengers": 100,
-          "connectedStations": [
-            "DhobyGhaut"
-          ],
-          "lines": [
-            "red"
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 200,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
           ]
         },
         {
           "name": "PayaLebar",
           "passengers": 75,
-          "connectedStations": [
-            "DhobyGhaut",
-            "Serangoon"
-          ],
-          "lines": [
-            "circle"
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
           ]
         }
       ]
     },
     "output": {
-      "line": "purple",
-      "totalNumOfPassengers": 190,
-      "reachingVia": "LittleIndia"
+      "line": "red",
+      "totalNumOfPassengers": 370,
+      "reachingVia": "Somerset"
     },
-    "score": 20
+    "score": 25
+  };
+  const trainPlanner = new TrainPlanner(testData.input);
+  const output = trainPlanner.getBusiestRoute(testData.input.destination);
+  console.log(output);
+  expect(output).toEqual(testData.output);
+});
+
+/*it('should return busiest station - test case 9', () => {
+  const testData = {
+    "name": "RouteMap-9",
+    "groupId": 3,
+    "input": {
+      "destination": "Expo",
+      "stations": [
+        {
+          "name": "Punggol",
+          "passengers": 80,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Sengkang",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Serangoon",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "LittleIndia",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "DhobyGhaut",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Expo",
+              "line": "blue"
+            }
+          ]
+        },
+        {
+          "name": "HarbourFront",
+          "passengers": 90,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 25,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Orchard",
+          "passengers": 30,
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Novena",
+          "passengers": 10,
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Bishan",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Woodlands",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "MarinaBay",
+          "passengers": 100,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Expo",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "blue"
+            },
+            {
+              "station": "Changi",
+              "line": "green"
+            }
+          ]
+        },
+        {
+          "name": "Changi",
+          "passengers": 300,
+          "connections": [
+            {
+              "station": "Expo",
+              "line": "green"
+            }
+          ]
+        },
+        {
+          "name": "PayaLebar",
+          "passengers": 75,
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        }
+      ]
+    },
+    "output": {
+      "line": "blue",
+      "totalNumOfPassengers": 630,
+      "reachingVia": "DhobyGhaut"
+    },
+    "score": 25
   };
   const trainPlanner = new TrainPlanner(testData.input);
   const output = trainPlanner.getBusiestRoute(testData.input.destination);
   console.log(output);
   expect(output).toEqual(testData.output);
 });*/
+
+it('should return busiest station - test case 10', () => {
+  const testData = {
+    "name": "RouteMap-10",
+    "groupId": 4,
+    "input": {
+      "destination": "Sengkang",
+      "stations": [
+        {
+          "name": "Punggol",
+          "passengers": 80,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Sengkang",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Serangoon",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "LittleIndia",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "DhobyGhaut",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Expo",
+              "line": "blue"
+            }
+          ]
+        },
+        {
+          "name": "HarbourFront",
+          "passengers": 90,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 25,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Orchard",
+          "passengers": 30,
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Novena",
+          "passengers": 10,
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Bishan",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Woodlands",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "MarinaBay",
+          "passengers": 100,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Expo",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "blue"
+            },
+            {
+              "station": "Changi",
+              "line": "green"
+            }
+          ]
+        },
+        {
+          "name": "Changi",
+          "passengers": 300,
+          "connections": [
+            {
+              "station": "Expo",
+              "line": "green"
+            }
+          ]
+        },
+        {
+          "name": "PayaLebar",
+          "passengers": 75,
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        }
+      ]
+    },
+    "output": {
+      "line": "purple",
+      "totalNumOfPassengers": 830,
+      "reachingVia": "Serangoon"
+    },
+    "score": 25
+  };
+  const trainPlanner = new TrainPlanner(testData.input);
+  const output = trainPlanner.getBusiestRoute(testData.input.destination);
+  console.log(output);
+  expect(output).toEqual(testData.output);
+});
+
+/*it('should return busiest station - test case 11', () => {
+  const testData = {
+    "name": "RouteMap-11",
+    "groupId": 5,
+    "input": {
+      "destination": "Esplanade",
+      "stations": [
+        {
+          "name": "Punggol",
+          "passengers": 80,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Sengkang",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Serangoon",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "LittleIndia",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "DhobyGhaut",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "HarbourFront",
+          "passengers": 90,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Orchard",
+          "passengers": 30,
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Novena",
+          "passengers": 10,
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Bishan",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Woodlands",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "MarinaBay",
+          "passengers": 100,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "PayaLebar",
+          "passengers": 75,
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        }
+      ]
+    },
+    "output": {
+      "line": "orange",
+      "totalNumOfPassengers": 295,
+      "reachingVia": "PayaLebar"
+    },
+    "score": 25
+  };
+  const trainPlanner = new TrainPlanner(testData.input);
+  const output = trainPlanner.getBusiestRoute(testData.input.destination);
+  console.log(output);
+  expect(output).toEqual(testData.output);
+});*/
+
+it('should return busiest station - test case 12', () => {
+  const testData = {
+    "name": "RouteMap-12",
+    "groupId": 6,
+    "input": {
+      "destination": "Sengkang",
+      "stations": [
+        {
+          "name": "Punggol",
+          "passengers": 500,
+          "connections": [
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Sengkang",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Punggol",
+              "line": "purple"
+            },
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Serangoon",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "Sengkang",
+              "line": "purple"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            },
+            {
+              "station": "Bishan",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "LittleIndia",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Serangoon",
+              "line": "purple"
+            },
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "DhobyGhaut",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "LittleIndia",
+              "line": "purple"
+            },
+            {
+              "station": "HarbourFront",
+              "line": "purple"
+            },
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "MarinaBay",
+              "line": "red"
+            },
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "HarbourFront",
+          "passengers": 90,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "purple"
+            }
+          ]
+        },
+        {
+          "name": "Somerset",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            },
+            {
+              "station": "Orchard",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Orchard",
+          "passengers": 30,
+          "connections": [
+            {
+              "station": "Somerset",
+              "line": "red"
+            },
+            {
+              "station": "Novena",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Novena",
+          "passengers": 10,
+          "connections": [
+            {
+              "station": "Orchard",
+              "line": "red"
+            },
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Bishan",
+          "passengers": 20,
+          "connections": [
+            {
+              "station": "Novena",
+              "line": "red"
+            },
+            {
+              "station": "Woodlands",
+              "line": "red"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "Woodlands",
+          "passengers": 40,
+          "connections": [
+            {
+              "station": "Bishan",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "MarinaBay",
+          "passengers": 100,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "red"
+            }
+          ]
+        },
+        {
+          "name": "Esplanade",
+          "passengers": 0,
+          "connections": [
+            {
+              "station": "DhobyGhaut",
+              "line": "orange"
+            },
+            {
+              "station": "PayaLebar",
+              "line": "orange"
+            }
+          ]
+        },
+        {
+          "name": "PayaLebar",
+          "passengers": 75,
+          "connections": [
+            {
+              "station": "Esplanade",
+              "line": "orange"
+            },
+            {
+              "station": "Serangoon",
+              "line": "orange"
+            }
+          ]
+        }
+      ]
+    },
+    "output": {
+      "line": "purple",
+      "totalNumOfPassengers": 500,
+      "reachingVia": "Punggol"
+    },
+    "score": 25
+  };
+  const trainPlanner = new TrainPlanner(testData.input);
+  const output = trainPlanner.getBusiestRoute(testData.input.destination);
+  console.log(output);
+  expect(output).toEqual(testData.output);
+});
 
 
 
