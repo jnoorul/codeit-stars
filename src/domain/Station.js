@@ -1,5 +1,8 @@
 export default class Station {
   constructor(name, numOfPassengers) {
+    this.name = name;
+    this.numOfPassengers = numOfPassengers;
+
     this.getName = () => {
       return name;
     };

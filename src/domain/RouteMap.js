@@ -43,10 +43,28 @@ export default class RouteMap {
         newRoute.push(dest);
         listOfRoutes.push(newRoute);
       } else {
-        this.findListOfRoutes(conn.station, dest, newRoute, listOfRoutes);
+        if(this.isStillShortest(listOfRoutes, newRoute)) {
+          this.findListOfRoutes(conn.station, dest, newRoute, listOfRoutes);
+        }
       }
     });
     return listOfRoutes;
+  }
+
+  isStillShortest(listOfRoutes,newRoute){
+    if(listOfRoutes.length === 0){
+      return true;
+    }
+    if(newRoute.length > this.stations.length / 2){
+      return false;
+    }
+    let minNumOfStops = listOfRoutes[0].length;
+    listOfRoutes.forEach((route) => {
+      if(route.length < minNumOfStops){
+        minNumOfStops = route.length;
+      }
+    });
+    return (newRoute.length < minNumOfStops);
   }
 
   getNextStationOfShortestRoute(src, dest) {
