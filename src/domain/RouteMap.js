@@ -17,13 +17,14 @@ export default class RouteMap {
     });
   };
 
-  getTotalPassengers(station, lastVisitedStn, destination) {
+  getTotalPassengers(station, lastVisitedStn, destination, distance = 1) {
     let totalPassenger = 0;
+    distance += 1;
     station.connections.forEach((conn) => {
       if (!conn.station.equals(lastVisitedStn) && !conn.station.equals(destination)) {
-        const nextStnInShortestRoute = this.getNextStationOfShortestRoute(conn.station, destination);
+        const nextStnInShortestRoute = this.getNextStationOfShortestRoute(conn.station, destination, distance);
         if(nextStnInShortestRoute.equals(station)) {
-          totalPassenger += this.getTotalPassengers(conn.station, station, destination);
+          totalPassenger += this.getTotalPassengers(conn.station, station, destination, distance);
         }
       }
     });
@@ -32,9 +33,12 @@ export default class RouteMap {
     return totalPassenger;
   }
 
-  findListOfRoutes(src, dest, route, listOfRoutes) {
+  findListOfRoutes(src, dest, route, listOfRoutes, distance) {
     src.connections.forEach((conn) => {
       const newRoute = route.slice();
+      if(newRoute.length  > distance) {
+        return;
+      }
       if (route.length > 0 && conn.station.equals(newRoute[newRoute.length - 1])) {
         return;
       }
@@ -43,35 +47,17 @@ export default class RouteMap {
         newRoute.push(dest);
         listOfRoutes.push(newRoute);
       } else {
-        if(this.isStillShortest(listOfRoutes, newRoute)) {
-          this.findListOfRoutes(conn.station, dest, newRoute, listOfRoutes);
-        }
+        this.findListOfRoutes(conn.station, dest, newRoute, listOfRoutes, distance);
       }
     });
     return listOfRoutes;
   }
 
-  isStillShortest(listOfRoutes,newRoute){
-    if(listOfRoutes.length === 0){
-      return true;
-    }
-    if(newRoute.length > this.stations.length / 2){
-      return false;
-    }
-    let minNumOfStops = listOfRoutes[0].length;
-    listOfRoutes.forEach((route) => {
-      if(route.length < minNumOfStops){
-        minNumOfStops = route.length;
-      }
-    });
-    return (newRoute.length < minNumOfStops);
-  }
-
-  getNextStationOfShortestRoute(src, dest) {
+  getNextStationOfShortestRoute(src, dest, distance) {
     if (src.connections.length === 1) {
       return src.connections[0].station;
     }
-    const listOfRoutes = this.findListOfRoutes(src, dest, [], []);
+    const listOfRoutes = this.findListOfRoutes(src, dest, [], [], distance);
     let minSize = listOfRoutes[0].length;
     let minRoute = listOfRoutes[0];
     listOfRoutes.forEach((route) => {
